@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "syphonizer",
+  "version": "${version}",
+  "name": "Syphonizer",
+  "description": "Make your Minecraft a Syphon server.",
+  "authors": [
+    "ud2"
+  ],
+  "contact": {
+    "sources": "https://github.com/0f-0b/syphonizer"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": [
+      "ud2.syphonizer.Syphonizer"
+    ]
+  },
+  "mixins": [
+    "syphonizer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "java": ">=17"
+  }
+}

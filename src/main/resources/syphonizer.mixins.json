@@ -1,0 +1,9 @@
+{
+  "package": "ud2.syphonizer.mixin",
+  "client": [
+    "MixinMinecraft"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

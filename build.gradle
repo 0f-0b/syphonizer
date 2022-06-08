@@ -1,0 +1,52 @@
+plugins {
+  id "fabric-loom" version "0.12-SNAPSHOT"
+}
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
+
+archivesBaseName = project.name
+version = project.version
+group = project.group
+
+repositories {
+  flatDir {
+    dirs "lib"
+  }
+  maven {
+    name = "Gegy's Maven"
+    url = "https://maven.gegy.dev/releases/"
+  }
+}
+
+dependencies {
+  minecraft "com.mojang:minecraft:${project.minecraft_version}"
+  mappings loom.officialMojangMappings()
+  modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+  modRuntimeOnly "supercoder79:databreaker:${project.databreaker_version}"
+  implementation "jsyphon:jsyphon:57216dc"
+  include "jsyphon:jsyphon:57216dc"
+}
+
+processResources {
+  inputs.property "version", project.version
+  filesMatching("fabric.mod.json") {
+    expand "version": project.version
+  }
+}
+
+tasks.withType(JavaCompile).configureEach {
+  it.options.release = 17
+}
+
+tasks.withType(JavaExec).configureEach {
+  it.maxHeapSize = "2G"
+}
+
+java {
+  withSourcesJar()
+}
+
+jar {
+  from "LICENSE"
+  from "LICENSE.syphon"
+}

@@ -1,0 +1,16 @@
+.DS_Store
+.project
+.classpath
+.settings/
+.metadata/
+.idea/
+.vscode/
+.gradle/
+*.launch
+*.iml
+*.ipr
+*.iws
+/bin/
+/out/
+/build/
+/run/
