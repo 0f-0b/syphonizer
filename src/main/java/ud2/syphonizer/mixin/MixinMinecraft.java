@@ -38,7 +38,7 @@ public abstract class MixinMinecraft {
   }
 
   @Inject(method = "runTick", at = @At(value = "INVOKE", target = "com/mojang/blaze3d/pipeline/RenderTarget.blitToScreen(II)V", shift = Shift.AFTER))
-  public void handleRunTick(CallbackInfo ci) {
+  private void handleRunTick(CallbackInfo ci) {
     var width = this.window.getWidth();
     var height = this.window.getHeight();
     this.syphon.bindToDrawFrameOfSize(width, height);
