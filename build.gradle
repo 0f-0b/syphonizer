@@ -1,5 +1,5 @@
 plugins {
-  id "fabric-loom" version "1.0-SNAPSHOT"
+  id "fabric-loom" version "1.1-SNAPSHOT"
 }
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
@@ -23,8 +23,8 @@ dependencies {
   mappings loom.officialMojangMappings()
   modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
   modRuntimeOnly "supercoder79:databreaker:${project.databreaker_version}"
-  implementation "jsyphon:jsyphon:57216dc"
-  include "jsyphon:jsyphon:57216dc"
+  implementation "jsyphon:jsyphon:0.0.0+57216dc"
+  include "jsyphon:jsyphon:0.0.0+57216dc"
 }
 
 processResources {
